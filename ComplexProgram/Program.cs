@@ -1,27 +1,27 @@
-﻿using ComplexLibruary;
-using System;
+﻿using System;
 
 namespace ComplexProgram
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            
-            ComplexNumber complex1 = new ComplexNumber();
+            RationalNumber r1 = new RationalNumber(3, 4);
+            RationalNumber r2 = new RationalNumber(2, 5);
 
-            ComplexNumber complex2 = new ComplexNumber();
+            RationalNumber sum = RationalNumber.Add(r1, r2);
+            RationalNumber product = RationalNumber.Multiply(r1, r2);
+            RationalNumber quotient = RationalNumber.Divide(r1, r2);
 
-            Console.WriteLine($"Числитель: {complex1}");
-            Console.WriteLine($"Знаменатель: {complex2}");
+            Console.WriteLine($"Сумма: {sum.Numerator}/{sum.Denominator}");
+            Console.WriteLine($"Произведение: {product.Numerator}/{product.Denominator}");
+            Console.WriteLine($"Частное: {quotient.Numerator}/{quotient.Denominator}");
 
-            Console.WriteLine($"Сложение: {complex1.Add(complex2)}");
-            Console.WriteLine($"Умножение: {complex1.Multiply(complex2)}");
-            Console.WriteLine($"Деление: {complex1.Divide(complex2)}");
+            ComplexNumber c1 = new ComplexNumber(1.5, 2.5);
+            RationalNumber rationalConstant = new RationalNumber(3, 2);
 
-            Console.WriteLine("Введите константу для умножения:");
-            int rational = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Комплексное, умноженное на константу {rational}: {complex1.MultiplyByRational(rational)}");
+            ComplexNumber productComplex = ComplexNumber.MultiplyByRational(c1, rationalConstant);
+            Console.WriteLine($"Умножение на рациональную константу: {productComplex.Real} + {productComplex.Imaginary}i");
         }
     }
 }
