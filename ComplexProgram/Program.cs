@@ -17,7 +17,7 @@ namespace ComplexProgram
             Console.WriteLine($"Произведение: {product.Numerator}/{product.Denominator}");
             Console.WriteLine($"Частное: {quotient.Numerator}/{quotient.Denominator}");
 
-            ComplexNumber c1 = new ComplexNumber(1.5, 2.5);
+            ComplexNumber c1 = new ComplexNumber(1, 2);
             RationalNumber rationalConstant = new RationalNumber(3, 2);
 
             ComplexNumber productComplex = ComplexNumber.MultiplyByRational(c1, rationalConstant);
